@@ -42,6 +42,9 @@ This is an application designed to run in a Kubernetes cluster which can be used
 	http://localhost:8080 
 	http://localhost:8080/metrics
 	```
+![httpstat](https://github.com/soumiyajit/httpstat-app/blob/main/images/httpstat.png)
+![httpstat metric](https://github.com/soumiyajit/httpstat-app/blob/main/images/httpstat-metric.png)
+
 
 #### Create a Docker image:
 
@@ -60,6 +63,7 @@ This is an application designed to run in a Kubernetes cluster which can be used
 	http://localhost:8080 
 	http://localhost:8080/metrics
 	```
+	
 	
 3. ##### Login to your docker account and push the image to your repository:
 
@@ -89,7 +93,6 @@ Make a note of the NodePort to access the application.
 	http://<NodeIP>:<Node Port>
 	http://<NodeIP>:<Node Port>/metrics
 	```
-
 	
 	
 #### Configure Prometheus and Grafana:
@@ -122,16 +125,31 @@ Make a note of the NodePort to access the application.
 
 4. ##### Now we can verify our application from the Prometheus dashboard:
 
+![prometheus dashbaord](https://github.com/soumiyajit/httpstat-app/blob/main/images/prom-basic.png)
+![prometheus url](https://github.com/soumiyajit/httpstat-app/blob/main/images/httpstat-url.png)
+![prometheus url graph](https://github.com/soumiyajit/httpstat-app/blob/main/images/httpstat-url-graph.png)
+![prometheus response stat](https://github.com/soumiyajit/httpstat-app/blob/main/images/httpstat-resp.png)
+![prometheus response stat graph](https://github.com/soumiyajit/httpstat-app/blob/main/images/httpstat-resp-graph.png)
+
 5. ##### Now access the Grafana dashboard using the NodeIP and Node Port:
 
-	Add the Prometheus data source
+	Login to the Grafana Dashboard:
+   
+	![Grafana Dashboard](https://github.com/soumiyajit/httpstat-app/blob/main/images/grafana-basic-dashbaord.png)
+
+	Add the Prometheus data source:
+
 	
-	Import the Grafana Dashboard
+	
+	Import the Grafana configuration file
+	
+	![Add Prometheus Data Source](https://github.com/soumiyajit/httpstat-app/blob/main/images/grafana-import.png)
 	
 	Click the upload and select the grafana.json file.
 	
 	When the import is successful we can see the application metrics in Grafana.
 	
+	![Application Metrics](https://github.com/soumiyajit/httpstat-app/blob/main/images/grafana-httpstat.png)
 
 #### Reference:
 
