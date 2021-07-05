@@ -2,7 +2,7 @@
 
 This is an application designed to run in a Kubernetes cluster which can be used to monitor external URL. The state of the external URL and the response time in millisecond can be seen from Promethues. Also the metrics ingested by Prometheus Server should be visualized form the Grafana Dashboard.
 
-#####The following URLs are used for the sample application:
+##### The following URLs are used for the sample application:
 	1. [https://httpstat.us/200](https://httpstat.us/200)
 	2. [https://httpstat.us/503](https://httpstat.us/503)
 
@@ -17,7 +17,7 @@ This is an application designed to run in a Kubernetes cluster which can be used
 
 1. ##### Clone the git repository:
 	```
-	https://soumiyajit.github.com
+	git clone [git@github.com:soumiyajit/httpstat-app.git](git@github.com:soumiyajit/httpstat-app.git)
 	```
 
 2. ##### Install the required package:
@@ -89,6 +89,9 @@ Make a note of the NodePort to access the application.
 	http://<NodeIP>:<Node Port>
 	http://<NodeIP>:<Node Port>/metrics
 	```
+
+	
+	
 #### Configure Prometheus and Grafana:
 
 1. ##### Install Prometheus using Helm:
