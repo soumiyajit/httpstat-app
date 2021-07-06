@@ -17,7 +17,7 @@ This is an application designed to run in a Kubernetes cluster which can be used
 
 1. ##### Clone the git repository:
 	```
-	git clone ![git@github.com:soumiyajit/httpstat-app.git](git@github.com:soumiyajit/httpstat-app.git)
+	git clone git@github.com:soumiyajit/httpstat-app.git
 	```
 
 2. ##### Install the required package:
