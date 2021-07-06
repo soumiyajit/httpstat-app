@@ -85,6 +85,7 @@ This is an application designed to run in a Kubernetes cluster which can be used
 	```
 	kubectl get all
 	```
+![httpstat-app](https://github.com/soumiyajit/httpstat-app/blob/main/images/httpstat-app.png)
 
 Make a note of the NodePort to access the application.
 
@@ -147,6 +148,7 @@ Then we can continue to check our application metrics as below:
 
 	Add the Prometheus data source, go to Configuration->Data sources tab, also provide the cluster ip and port of the prometheus server:
 
+![Prometheus data source add](https://github.com/soumiyajit/httpstat-app/blob/main/images/add-datasource.png)
 	
 	
 	Import the Grafana configuration file
