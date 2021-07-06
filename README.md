@@ -153,13 +153,13 @@ Then we can continue to check our application metrics as below:
 	
 	Import the Grafana configuration file
 	
-	![Add Prometheus Data Source](https://github.com/soumiyajit/httpstat-app/blob/main/images/grafana-import.png)
+![Add Prometheus Data Source](https://github.com/soumiyajit/httpstat-app/blob/main/images/grafana-import.png)
 	
-	Click the upload and select the grafana.json file.
+	Click the upload and select the grafana.json file provided.
 	
 	When the import is successful we can see the application metrics in Grafana.
 	
-	![Application Metrics](https://github.com/soumiyajit/httpstat-app/blob/main/images/grafana-httpstat.png)
+![Application Metrics](https://github.com/soumiyajit/httpstat-app/blob/main/images/grafana-httpstat.png)
 
 #### Reference:
 
