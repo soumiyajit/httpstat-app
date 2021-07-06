@@ -18,6 +18,7 @@ This is an application designed to run in a Kubernetes cluster which can be used
 1. ##### Clone the git repository:
 	```
 	git clone git@github.com:soumiyajit/httpstat-app.git
+	cd httpstat-app
 	```
 
 2. ##### Install the required package:
@@ -77,7 +78,7 @@ This is an application designed to run in a Kubernetes cluster which can be used
 1. ##### The manifests folder contains the deployment and service file for the application. Deploy the same in the target cluster
 
 	```
-	kubectl create -f src/manifests/
+	kubectl create -f manifests/
 	```
 
 2. ##### Verify all the pods, services, deployment and replicasets:
