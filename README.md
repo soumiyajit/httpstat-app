@@ -88,6 +88,7 @@ This is an application designed to run in a Kubernetes cluster which can be used
 
 Make a note of the NodePort to access the application.
 
+
 3. ##### Verify the NodePort for the httpstat-url-svc service and access the application from the browser:
 
 	```
@@ -112,20 +113,26 @@ Make a note of the NodePort to access the application.
 	```
 	helm repo add grafana https://grafana.github.io/helm-charts
 	helm repo update
-	helm install -f grafana-values.yml grafana grafana/grafana
+	helm install -f grafana-values.yaml grafana grafana/grafana
 	```
 	Now configure the service of the Grafana to make the prometheus server available over Node Port.
 
 3. ##### Update the prometheus-server configuration to scrape metrics of the application:
+	
+	```
+	kubectl edit cm prometheus-server
+	```
+	Add the below in the scrape_config section:
 
 	```
 	- job_name: 'httpstat-url'
       static_configs:
-      - targets: ['<NodeIP>:<Node Port>']
+      - targets: ['<ClusterIP>:80']
 	```
 
 4. ##### Now we can verify our application from the Prometheus dashboard:
-
+	In the prometheus dashbaord we can verify first if the scrape configuration added are present. For that we need to go to status->configuration tab and check that the scrape added are present.
+Then we can continue to check our application metrics as below:
 ![prometheus dashbaord](https://github.com/soumiyajit/httpstat-app/blob/main/images/prom-basic.png)
 ![prometheus url](https://github.com/soumiyajit/httpstat-app/blob/main/images/httpstat-url.png)
 ![prometheus url graph](https://github.com/soumiyajit/httpstat-app/blob/main/images/httpstat-url-graph.png)
@@ -134,11 +141,11 @@ Make a note of the NodePort to access the application.
 
 5. ##### Now access the Grafana dashboard using the NodeIP and Node Port:
 
-	Login to the Grafana Dashboard:
+	Login to the Grafana Dashboard: <admin/password>
    
 	![Grafana Dashboard](https://github.com/soumiyajit/httpstat-app/blob/main/images/grafana-basic-dashbaord.png)
 
-	Add the Prometheus data source:
+	Add the Prometheus data source, go to Configuration->Data sources tab, also provide the cluster ip and port of the prometheus server:
 
 	
 	
