@@ -6,7 +6,7 @@ This is an application designed to run in a Kubernetes cluster which can be used
 	1. [https://httpstat.us/200](https://httpstat.us/200)
 	2. [https://httpstat.us/503](https://httpstat.us/503)
 
-#####Expected response format:
+##### Expected response format:
 
 	httpstat_url_up{url="https://httpstat.us/503 "}  = 0
 	httpstat_url_resp_ms{url="https://httpstat.us/503 "}  = [value]
