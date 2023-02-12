@@ -1,3 +1,2 @@
-URLS=https://httpstat.us/503,https://httpstat.us/200
 TIMEOUT=2
 PORT=8080
